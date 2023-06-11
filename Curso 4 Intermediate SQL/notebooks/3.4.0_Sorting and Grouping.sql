@@ -26,4 +26,26 @@
 -- ORDER BY certification ASC, release_year DESC;
 
 
+-- ## 3.4.5 GROUP BY single fields
+
+-- Find the release_year and film_count of each year
+-- SELECT release_year, COUNT(*) AS film_count
+-- FROM films
+-- GROUP BY release_year
+-- ORDER BY release_year;
+
+-- Find the release_year and average duration of films for each year
+-- SELECT release_year, AVG(duration) AS avg_duration
+-- FROM films
+-- GROUP BY release_year
+-- ORDER BY release_year;
+
+
+-- ## 3.4.6 GROUP BY multiple fields
+
+
+
+
+
+
 
