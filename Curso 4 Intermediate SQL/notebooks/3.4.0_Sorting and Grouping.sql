@@ -59,12 +59,26 @@
 
 -- ## 3.4.9 Filter with HAVING
 
--- Select the country and distinct count of certification as certification_count
-SELECT country, COUNT(DISTINCT certification) AS certification_count
+-- -- Select the country and distinct count of certification as certification_count
+-- SELECT country, COUNT(DISTINCT certification) AS certification_count
+-- FROM films
+-- -- Group by country
+-- GROUP BY country
+-- -- Filter results to countries with more than 10 different certifications
+-- HAVING COUNT(DISTINCT certification) > 10;
+
+
+
+-- ## 3.4.10 HAVING and sorting
+
+-- Select the country and average_budget from films
+SELECT country, ROUND(AVG(budget),2) AS average_budget
 FROM films
 -- Group by country
 GROUP BY country
--- Filter results to countries with more than 10 different certifications
-HAVING COUNT(DISTINCT certification) > 10;
+-- Filter to countries with an average_budget of more than one billion
+HAVING ROUND(AVG(budget),2) > 1000000000
+-- Order by descending order of the aggregated budget
+ORDER BY average_budget DESC;
 
 
