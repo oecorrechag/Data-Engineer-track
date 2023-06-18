@@ -66,15 +66,33 @@ LIMIT 10
 -- ORDER BY language;
 
 
+-- ## 5.3.6 Comparing joins
 
+-- Join to currencies, Where region is North America or name is null
+-- SELECT name AS country, code, region, basic_unit
+-- FROM countries
+-- FULL JOIN currencies
+-- USING (code)
+-- WHERE region = 'North America' OR region IS NULL
+-- ORDER BY region;
 
+-- replace FULL JOIN for LEFT JOIN
+SELECT name AS country, code, region, basic_unit
+FROM countries
+LEFT JOIN currencies
+USING (code)
+WHERE region = 'North America' 
+	OR name IS NULL
+ORDER BY region;
 
-
-
-
-
-
-
+-- replace FULL JOIN for INNER JOIN
+SELECT name AS country, code, region, basic_unit
+FROM countries
+INNER JOIN currencies
+USING (code)
+WHERE region = 'North America' 
+	OR name IS NULL
+ORDER BY region;
 
 
 
