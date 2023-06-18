@@ -1,6 +1,6 @@
 -- SQLite
 
--- ## 5.3.3 This is a LEFT JOIN, right?
+-- ## 5.2.3 This is a LEFT JOIN, right?
 
 -- Perform an inner join with cities as c1 and countries as c2 on country code
 SELECT 
@@ -27,7 +27,7 @@ ON c1.country_code = c2.code
 ORDER BY code DESC;
 
 
--- ## 5.3.4 Building on your LEFT JOIN
+-- ## 5.2.4 Building on your LEFT JOIN
 
 -- Match on code fields, Filter for the year 2010
 SELECT name, region, gdp_percapita
@@ -56,7 +56,7 @@ ORDER BY avg_gdp DESC
 LIMIT 10
 
 
--- ## 5.3.5 Is this RIGHT?
+-- ## 5.2.5 Is this RIGHT?
 
 -- Modify this query to use RIGHT JOIN instead of LEFT JOIN
 -- SELECT countries.name AS country, languages.name AS language, percent
@@ -66,7 +66,7 @@ LIMIT 10
 -- ORDER BY language;
 
 
--- ## 5.3.7 Comparing joins
+-- ## 5.2.7 Comparing joins
 
 -- Join to currencies, Where region is North America or name is null
 -- SELECT name AS country, code, region, basic_unit
@@ -95,7 +95,7 @@ WHERE region = 'North America'
 ORDER BY region;
 
 
--- ## 5.3.8 Chaining FULL JOINs
+-- ## 5.2.8 Chaining FULL JOINs
 
 -- Full join with languages, Full join with currencies
 -- SELECT 
@@ -114,7 +114,7 @@ ORDER BY region;
 -- WHERE region LIKE 'M%esia';
 
 
--- ## 5.3.10 Histories and languages
+-- ## 5.2.10 Histories and languages
 
 -- SELECT c.name AS country, l.name AS language
 -- FROM countries AS c
@@ -132,7 +132,7 @@ WHERE c.code in ('PAK','IND')
 	AND l.code in ('PAK','IND');
 
 
--- ## 5.3.11 Choosing your join
+-- ## 5.2.11 Choosing your join
 
 SELECT 
 	c.name AS country,
@@ -150,7 +150,7 @@ ORDER BY life_exp
 LIMIT 5;
 
 
--- ## 5.3.12 Comparing a country to itself
+-- ## 5.2.12 Comparing a country to itself
 
 -- Select aliased fields from populations as p1  -> melt
 SELECT p1.country_code, p1.size AS size2010, p2.size AS size2015
@@ -168,5 +168,3 @@ INNER JOIN populations AS p2
 ON p1.country_code = p2.country_code
 WHERE p1.year = 2010
     AND p1.year = p2.year - 5
-
-
