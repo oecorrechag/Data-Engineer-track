@@ -66,7 +66,7 @@ LIMIT 10
 -- ORDER BY language;
 
 
--- ## 5.3.6 Comparing joins
+-- ## 5.3.7 Comparing joins
 
 -- Join to currencies, Where region is North America or name is null
 -- SELECT name AS country, code, region, basic_unit
@@ -95,7 +95,7 @@ WHERE region = 'North America'
 ORDER BY region;
 
 
--- ## 5.3.7 Chaining FULL JOINs
+-- ## 5.3.8 Chaining FULL JOINs
 
 -- Full join with languages, Full join with currencies
 -- SELECT 
@@ -112,6 +112,27 @@ ORDER BY region;
 -- FULL JOIN currencies AS c2
 -- USING(code)
 -- WHERE region LIKE 'M%esia';
+
+
+-- ## 5.3.10 Histories and languages
+
+-- SELECT c.name AS country, l.name AS language
+-- FROM countries AS c
+-- -- Inner join countries as c with languages as l on code
+-- INNER JOIN languages AS l
+-- USING(code)
+-- WHERE c.code IN ('PAK','IND')
+-- 	AND l.code in ('PAK','IND');
+
+SELECT c.name AS country, l.name AS language
+FROM countries AS c        
+-- Perform a cross join to languages (alias as l)
+CROSS JOIN languages AS l
+WHERE c.code in ('PAK','IND')
+	AND l.code in ('PAK','IND');
+
+
+-- ## 5.3.11 Choosing your join
 
 
 
