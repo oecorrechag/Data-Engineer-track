@@ -59,3 +59,31 @@ ORDER BY language
 
 
 -- ## 5.1.9 Joining multiple tables
+
+-- Select relevant fields
+SELECT name, year, fertility_rate
+FROM countries AS c
+-- Inner join countries and y, aliased, on code
+INNER JOIN populations AS p
+ON c.code = p.country_code;
+
+-- Select fields
+SELECT name, e.year, fertility_rate, e.unemployment_rate
+FROM countries AS c
+INNER JOIN populations AS p
+ON c.code = p.country_code
+-- Join to economies (as e)
+INNER JOIN economies AS e
+-- Match on country code
+ON c.code = e.code;
+
+
+-- ## 5.1.10 Checking multi-table joins
+
+SELECT name, e.year, fertility_rate, unemployment_rate
+FROM countries AS c
+INNER JOIN populations AS p
+ON c.code = p.country_code
+INNER JOIN economies AS e
+ON c.code = e.code
+AND e.year = p.year;
