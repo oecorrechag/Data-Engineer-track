@@ -36,7 +36,26 @@ INNER JOIN languages AS l
 USING(code);
 
 
--- ## 5.1.6 Relationships in our database
+-- ## 5.1.7 Inspecting a relationship
 
 
+-- Select country and language names, aliased
+SELECT c.name AS country, l.name AS language
+-- From countries (aliased)
+FROM countries AS c
+-- Join to languages (aliased)
+INNER JOIN languages AS l
+-- Use code as the joining field with the USING keyword
+USING (code);
 
+
+-- Rearrange SELECT statement, keeping aliases
+SELECT c.name AS country, l.name AS language
+FROM countries AS c
+INNER JOIN languages AS l
+USING(code)
+-- Order the results by language
+ORDER BY language
+
+
+-- ## 5.1.9 Joining multiple tables
