@@ -48,5 +48,25 @@ SELECT AVG(life_expectancy)
 FROM populations
 WHERE year = 2015
 
+-- Filter for only those populations where life expectancy is 1.15 times higher than average
+SELECT *
+FROM populations
+WHERE life_expectancy > 1.15 * 
+  (SELECT AVG(life_expectancy)
+   FROM populations
+   WHERE year = 2015) 
+    AND year = 2015;
+
+
+-- ## 5.4.7 WHERE do people live?
+
+-- Select relevant fields from cities table, Filter using a subquery on the countries table
+SELECT name, country_code, urbanarea_pop
+FROM cities
+WHERE name IN
+    (SELECT capital
+     FROM countries)
+ORDER BY urbanarea_pop DESC;
+
 
 
