@@ -90,4 +90,26 @@ ORDER BY cities_num DESC, country
 LIMIT 9;
 
 
+-- ## 5.4.9 Subquery inside FROM
+
+-- Select code, and language count as lang_num
+SELECT code, COUNT(*) AS lang_num
+FROM languages
+GROUP BY code;
+
+-- Select local_name and lang_num from appropriate tables, Where codes match
+SELECT local_name, sub.lang_num
+FROM countries,
+  (SELECT code, COUNT(*) AS lang_num
+  FROM languages
+  GROUP BY code) AS sub
+  WHERE countries.code = sub.code
+ORDER BY lang_num DESC;
+
+
+
+
+
+
+
 
