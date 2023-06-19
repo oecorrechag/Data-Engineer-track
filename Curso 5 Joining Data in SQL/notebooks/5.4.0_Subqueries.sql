@@ -121,4 +121,18 @@ FROM economies
 ORDER BY inflation_rate;
 
 
+-- ## 5.4.11 Final challenge
 
+-- Select fields from cities, Use subquery to filter city name, Add filter condition such that metroarea_pop does not have null values, Sort and limit the result
+Select name, country_code, city_proper_pop, metroarea_pop,  city_proper_pop / metroarea_pop * 100 AS city_perc
+FROM cities
+WHERE name IN
+    (
+        SELECT capital
+        FROM countries
+        WHERE (continent = 'Europe'
+            OR continent LIKE '%America')
+            AND metroarea_pop IS NOT NULL
+    )
+ORDER BY city_perc DESC
+LIMIT 10;
