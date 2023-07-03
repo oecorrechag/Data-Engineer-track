@@ -1,6 +1,6 @@
 -- SQLite
 
--- ## 3.4.2 Sorting single fields
+-- ## 4.4.2 Sorting single fields
 
 Select name from people and sort alphabetically
 Select name
@@ -13,7 +13,7 @@ FROM films
 ORDER BY duration DESC;
 
 
--- ## 3.4.3 Sorting multiple fields
+-- ## 4.4.3 Sorting multiple fields
 
 Select the release year, duration, and title sorted by release year and duration
 SELECT release_year, duration, title
@@ -26,7 +26,7 @@ FROM films
 ORDER BY certification ASC, release_year DESC;
 
 
--- ## 3.4.5 GROUP BY single fields
+-- ## 4.4.5 GROUP BY single fields
 
 Find the release_year and film_count of each year
 SELECT release_year, COUNT(*) AS film_count
@@ -41,7 +41,7 @@ GROUP BY release_year
 ORDER BY release_year;
 
 
--- ## 3.4.6 GROUP BY multiple fields
+-- ## 4.4.6 GROUP BY multiple fields
 
 Find the release_year, country, and max_budget, then group and order by release_year and country
 SELECT release_year, country, MAX(budget) AS max_budget
@@ -50,7 +50,7 @@ GROUP BY release_year, country
 ORDER BY release_year, country;
 
 
--- ## 3.4.7 Answering business questions
+-- ## 4.4.7 Answering business questions
 
 SELECT release_year, COUNT(DISTINCT language) AS language
 FROM films
@@ -58,7 +58,7 @@ GROUP BY release_year
 ORDER BY language DESC;
 
 
--- ## 3.4.9 Filter with HAVING
+-- ## 4.4.9 Filter with HAVING
 
 -- Select the country and distinct count of certification as certification_count
 SELECT country, COUNT(DISTINCT certification) AS certification_count
@@ -69,7 +69,7 @@ GROUP BY country
 HAVING COUNT(DISTINCT certification) > 10;
 
 
--- ## 3.4.10 HAVING and sorting
+-- ## 4.4.10 HAVING and sorting
 
 -- Select the country and average_budget from films
 SELECT country, ROUND(AVG(budget),2) AS average_budget
@@ -82,7 +82,7 @@ HAVING ROUND(AVG(budget),2) > 1000000000
 ORDER BY average_budget DESC;
 
 
--- ## 3.4.11 All together now
+-- ## 4.4.11 All together now
 
 -- Select the release_year for films released after 1990 grouped by year
 SELECT release_year
