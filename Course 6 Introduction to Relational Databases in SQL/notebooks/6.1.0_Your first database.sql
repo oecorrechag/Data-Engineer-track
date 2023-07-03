@@ -26,8 +26,33 @@ FROM university_professors
 LIMIT 5;
 
 
+-- ## 6.1.4 CREATE your first few TABLEs
+
+DROP TABLE IF EXISTS professors;
+
+-- Create a table for the professors entity type
+CREATE TABLE professors (
+    firstname text,
+    lastname text
+);
+
+-- Print the contents of this table
+SELECT * 
+FROM professors
+
+DROP TABLE IF EXISTS universities;
+
+-- Create a table for the universities entity type
+CREATE TABLE universities (
+    university_shortname text,
+    university text text,
+    university_city text
+);
+
+-- Print the contents of this table
+SELECT * 
+FROM universities
 
 
-
-
+-- ## 6.1.5 ADD a COLUMN with ALTER TABLE
 
