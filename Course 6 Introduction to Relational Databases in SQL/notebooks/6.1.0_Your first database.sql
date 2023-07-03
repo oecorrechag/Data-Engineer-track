@@ -97,3 +97,7 @@ SELECT *
 FROM affiliations;
 
 
+-- ## 6.1.9 Delete tables with DROP TABLE
+
+-- Delete the university_professors table
+DROP TABLE university_professors;
