@@ -46,11 +46,15 @@ FROM professors;
 -- USING SUBSTRING(firstname FROM 1 FOR 16)
 
 
+-- ## 6.2.9 Disallow NULL values with SET NOT NULL
 
+-- Disallow NULL values in firstname
+-- ALTER TABLE professors 
+-- ALTER COLUMN firstname SET NOT NULL;
 
-
-
-
+-- Disallow NULL values in lastname
+-- ALTER TABLE professors 
+-- ALTER COLUMN lastname SET NOT NULL;
 
 
 
