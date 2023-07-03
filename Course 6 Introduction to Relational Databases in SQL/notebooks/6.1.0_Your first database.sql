@@ -56,3 +56,12 @@ FROM universities
 
 -- ## 6.1.5 ADD a COLUMN with ALTER TABLE
 
+-- Add the university_shortname column
+ALTER TABLE professors
+ADD COLUMN university_shortname text;
+
+-- Print the contents of this table
+SELECT * 
+FROM professors
+
+
