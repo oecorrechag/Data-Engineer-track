@@ -20,3 +20,21 @@ SELECT transaction_date, amount + CAST(fee AS integer) AS net_amount
 FROM transactions;
 
 
+-- ## 6.2.6 Change types with ALTER COLUMN
+
+-- Select the university_shortname column
+SELECT DISTINCT(university_shortname) 
+FROM professors;
+
+-- Specify the correct fixed-length character type
+-- ALTER TABLE professors
+-- ALTER COLUMN university_shortname
+-- TYPE char(3);
+
+-- Change the type of firstname
+-- ALTER TABLE professors
+-- ALTER COLUMN firstname
+-- TYPE varchar(64);
+
+
+
