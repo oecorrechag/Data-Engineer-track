@@ -9,6 +9,10 @@ SELECT table_name
 FROM information_schema.tables
 WHERE table_schema = 'public';
 
+SELECT table_name
+FROM information_schema.Columns
+WHERE table_schema = 'public';
+
 -- With SQLite3
 SELECT name, sql 
 FROM sqlite_master
