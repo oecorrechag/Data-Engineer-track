@@ -39,6 +39,44 @@ ALTER TABLE universities
 ADD CONSTRAINT university_pk PRIMARY KEY (id);
 
 
+-- ## 6.3.8 Add a SERIAL surrogate key
+
+-- Add the new column to the table
+ALTER TABLE professors 
+ADD COLUMN id serial;
+
+-- Make id a primary key
+ALTER TABLE professors 
+ADD CONSTRAINT professors_pkey PRIMARY KEY (id);
+
+-- Have a look at the first 10 rows of professors
+SELECT * 
+FROM professors 
+LIMIT 10;
+
+
+-- ## 6.3.9 CONCATenate columns to a surrogate key
+
+-- Count the number of distinct rows with columns make, model
+SELECT COUNT(DISTINCT(make, model)) 
+FROM cars;
+
+-- Add the id column
+ALTER TABLE cars 
+ADD COLUMN id serial;
+
+-- Update id with make + model
+UPDATE cars
+SET id = CONCAT(make, model);
+
+-- Make id a primary key
+ALTER TABLE cars
+ADD CONSTRAINT id_pk PRIMARY KEY (id);
+
+-- Have a look at the table
+SELECT * 
+FROM cars;
+
 
 
 
