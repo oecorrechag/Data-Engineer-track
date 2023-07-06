@@ -15,6 +15,6 @@ FROM universities;
 
 -- ## 6.3.3 Identify keys with SELECT COUNT DISTINCT
 
-
--- Falta bd
-
+-- Try out different combinations
+SELECT COUNT(DISTINCT(firstname, lastname)) 
+FROM professors;
