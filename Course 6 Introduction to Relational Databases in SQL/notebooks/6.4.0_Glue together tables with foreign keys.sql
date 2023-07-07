@@ -13,8 +13,11 @@ ALTER TABLE professors
 ADD CONSTRAINT professors_fkey FOREIGN KEY (university_id) REFERENCES universities (id);
 
 
+-- ## 6.4.3 Explore foreign key constraints
 
-
+-- Try to insert a new professor (fix)
+INSERT INTO professors (firstname, lastname, university_id)
+VALUES ('Albert', 'Einstein', 'UZH');
 
 
 
