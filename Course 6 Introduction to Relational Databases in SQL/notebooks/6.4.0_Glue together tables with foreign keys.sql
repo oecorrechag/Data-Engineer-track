@@ -45,6 +45,25 @@ ALTER TABLE affiliations
 ADD CONSTRAINT affiliations_organization_fkey FOREIGN KEY (organization_id) REFERENCES organizations (id);
 
 
+-- ## 6.4.7 Populate the "professor_id" column
+
+-- Have a look at the 10 first rows of affiliations
+SELECT * 
+FROM affiliations 
+LIMIT 10;
+
+-- Set professor_id to professors.id where firstname, lastname correspond to rows in professors
+UPDATE affiliations
+SET professor_id = professors.id
+FROM professors
+WHERE affiliations.firstname = professors.firstname AND affiliations.lastname = professors.lastname;
+
+
+
+
+
+
+
 
 
 
