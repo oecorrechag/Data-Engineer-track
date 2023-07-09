@@ -96,7 +96,12 @@ SELECT * FROM affiliations
 WHERE organization_id = 'CUREM';
 
 
+-- ## 6.4.13 Count affiliations per university
 
-
-
-
+-- Count the total number of affiliations per university, Group by the university ids of professors
+SELECT COUNT(*), professors.university_id 
+FROM affiliations
+JOIN professors
+ON affiliations.professor_id = professors.id
+GROUP BY professors.university_id
+ORDER BY count DESC;
