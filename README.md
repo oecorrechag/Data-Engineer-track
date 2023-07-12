@@ -6,5 +6,6 @@
 4. Course 4: Intermediate SQL
 5. Course 5: Joining Data in SQL
 6. Course 6: Introduction to Relational Databases in SQL
+7. Course 7: Database Design
 
 By: Oscar
