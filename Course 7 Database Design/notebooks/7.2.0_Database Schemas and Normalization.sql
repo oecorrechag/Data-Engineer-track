@@ -34,3 +34,17 @@ SELECT DISTINCT author FROM dim_book_star;
 -- Output the new table
 SELECT * 
 FROM dim_author;
+
+
+-- ## 7.2.5 Querying the star schema
+
+-- Output each state and their total sales_amount, Join to get book information, Get all books with in the novel genre, Group results by state
+
+SELECT dim_store_star.state, SUM(sales_amount)
+FROM fact_booksales
+    JOIN dim_book_star on fact_booksales.book_id = dim_book_star.book_id
+    JOIN dim_store_star on fact_booksales.store_id = dim_store_star.store_id
+WHERE  
+    dim_book_star.genre = 'novel'
+GROUP BY
+    dim_store_star.state;
