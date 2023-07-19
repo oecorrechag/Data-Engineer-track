@@ -143,4 +143,6 @@ CREATE TABLE cust_rentals (
 
 
 -- Drop columns in rental_cars to satisfy 3NF
-
+ALTER TABLE rental_cars
+DROP COLUMN manufacturer, 
+DROP COLUMN type_car;
