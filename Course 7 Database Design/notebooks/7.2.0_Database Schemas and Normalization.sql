@@ -81,19 +81,30 @@ ALTER TABLE dim_country_sf
 ADD continent_id int NOT NULL DEFAULT(1);
 
 -- Add the foreign key constraint
--- ALTER TABLE dim_country_sf ADD CONSTRAINT country_continent
--- FOREIGN KEY (continent_id) REFERENCES dim_country_sf(continent_id);
+-- ALTER TABLE dim_country_sf 
+-- ADD CONSTRAINT country_continent
+-- FOREIGN KEY (continent_id) REFERENCES dim_continent_sf(continent_id);
 
 -- Output updated table
 SELECT * 
 FROM dim_country_sf;
 
 
+-- ## 7.2.10 Converting to 1NF
 
+-- Create a new table to hold the cars rented by customers
+DROP TABLE IF EXISTS cust_rentals;
 
+CREATE TABLE cust_rentals (
+    customer_id INT NOT NULL,
+    car_id VARCHAR(128) NULL,
+    invoice_id VARCHAR(128) NULL
+);
 
-
-
+-- Drop a column from customers table to satisfy 1NF
+-- ALTER TABLE customers
+-- DROP COLUMN cars_rented,
+-- DROP COLUMN invoice_id
 
 
 
