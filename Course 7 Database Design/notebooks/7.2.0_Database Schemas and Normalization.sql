@@ -130,3 +130,17 @@ DROP COLUMN condition,
 DROP COLUMN color
 
 
+-- ## 7.2.12 Converting to 3NF
+
+-- Create a new table to satisfy 3NF
+DROP TABLE IF EXISTS cust_rentals;
+
+CREATE TABLE cust_rentals (
+    customer_id     INT NOT NULL,
+    car_id          VARCHAR(128) NULL,
+    invoice_id      VARCHAR(128) NULL
+);
+
+
+-- Drop columns in rental_cars to satisfy 3NF
+
