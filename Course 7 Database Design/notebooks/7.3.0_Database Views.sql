@@ -171,14 +171,13 @@ INNER JOIN label ON high_scores.reviewid = labels.reviewid
 WHERE label = 'self-released';
 
 
+-- ## 7.3.6 Creating a view from other views
 
-
-
-
-
-
-
-
+-- Create a view with the top artists in 2017, with only one column holding the artist field
+CREATE VIEW top_artists_2017 AS
+SELECT artist_title.artist FROM artist_title
+INNER JOIN top_15_2017
+ON artist_title.reviewid = top_15_2017.reviewid;
 
 
 
