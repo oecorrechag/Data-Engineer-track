@@ -146,3 +146,17 @@ CREATE TABLE cust_rentals (
 ALTER TABLE rental_cars
 DROP COLUMN manufacturer, 
 DROP COLUMN type_car;
+
+
+-- ## 7.3.3 Viewing views
+
+-- -- Get all non-systems views  -> postgress
+-- SELECT * 
+-- FROM information_schema.views
+-- WHERE table_schema NOT IN ('pg_catalog', 'information_schema');
+
+
+
+
+
+
