@@ -201,3 +201,25 @@ INNER JOIN labels
 ON labels.reviewid = reviews.reviewid;
 
 SELECT * FROM artist_title;
+
+
+-- ## 7.3.12 Creating and refreshing a materialized view
+
+-- Create a materialized view called genre_count 
+CREATE MATERIALIZED VIEW genre_count
+SELECT genre, COUNT(*) 
+FROM genres
+GROUP BY genre;
+
+INSERT INTO genres
+VALUES (50000, 'classical');
+
+-- Refresh genre_count
+INSERT INTO genres
+VALUES (50000, 'classical');
+
+-- Refresh genre_count
+REFRESH MATERIALIZED VIEW genre_count;
+
+SELECT * 
+FROM genre_count;
