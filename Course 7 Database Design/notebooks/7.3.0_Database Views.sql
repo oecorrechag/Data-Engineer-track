@@ -180,8 +180,13 @@ INNER JOIN top_15_2017
 ON artist_title.reviewid = top_15_2017.reviewid;
 
 
+-- ## 7.3.7 Granting and revoking access
 
+-- Revoke everyone's update and insert privileges
+REVOKE UPDATE, INSERT ON long_reviews FROM PUBLIC;
 
+-- Grant the editor update and insert privileges 
+GRANT UPDATE, INSERT ON long_reviews TO editor; 
 
 
 
