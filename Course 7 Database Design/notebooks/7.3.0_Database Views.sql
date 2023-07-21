@@ -189,4 +189,15 @@ REVOKE UPDATE, INSERT ON long_reviews FROM PUBLIC;
 GRANT UPDATE, INSERT ON long_reviews TO editor; 
 
 
+-- ## 7.3.9 Redefining a view
 
+-- Redefine the artist_title view to have a label column
+CREATE OR REPLACE VIEW artist_title AS
+SELECT reviews.reviewid, reviews.title, artists.artist, labels.label
+FROM reviews
+INNER JOIN artists
+ON artists.reviewid = reviews.reviewid
+INNER JOIN labels
+ON labels.reviewid = reviews.reviewid;
+
+SELECT * FROM artist_title;
