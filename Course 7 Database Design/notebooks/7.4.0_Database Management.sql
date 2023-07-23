@@ -23,3 +23,16 @@ GRANT UPDATE, INSERT ON long_reviews TO data_scientist;
 ALTER ROLE marta WITH PASSWORD 's3cur3p@ssw0rd';
 
 
+-- ## 7.4.4 Add a user role to a group role
+
+-- Add Marta to the data scientist group
+GRANT data_scientist TO marta;
+
+-- Remove Marta from the data scientist group
+REVOKE data_scientist FROM marta;
+
+
+
+
+
+
