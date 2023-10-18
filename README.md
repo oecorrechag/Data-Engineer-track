@@ -8,5 +8,6 @@
 6. Course 6: Introduction to Relational Databases in SQL
 7. Course 7: Database Design
 12. Course 12: Understanding Cloud Computing
+14. Course 14: Streamlined Data Ingestion with pandas
 
 By: Oscar
